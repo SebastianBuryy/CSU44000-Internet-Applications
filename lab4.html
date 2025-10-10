@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 4</title>
+  </head>
+  <body>
+    <h1>Lab 4</h1>
+    <p id="output"></p>
+  </body>
+  <!-- <script src="lab4.js"></script> -->
+  <!-- <script>
+    // Lab #4 Solution - Professor's version
+    async function runOnce(start, step, delay) {
+      let i = start
+      while (i >= 0) {
+        let p = new Promise((res, rej) => {
+          setTimeout(() => res(), delay)
+        })
+        await p
+        console.log("Current Number: " + i)
+        i = i - step
+      }
+    }
+    runOnce()
+    ;(async function main() {
+      do {
+        await runOnce(25, 5, 5000)
+      } while (confirm("Do you want to go again?"))
+    })()
+  </script> -->
+  <script>
+    // Embedded JS code
+    const output = document.getElementById("output")
+    async function countdown() {
+      let i = 35
+      while (i >= 0) {
+        console.log(i)
+        output.innerHTML += i + "<br>"
+        await new Promise((resolve, reject) => setTimeout(resolve, 5000))
+        i -= 5
+      }
+      if (confirm("Do you want to go again?")) {
+        output.innerHTML += "" // Clear previous output
+        countdown()
+      } else {
+        output.innerHTML += "Countdown finished."
+      }
+    }
+    countdown()
+  </script>
+</html>
