@@ -5,6 +5,9 @@ FedAvg aggregates model weights without sharing data:
 • Works well with small datasets like MNIST.
 • Can be extended to real-world FL scenarios using Flower.
 • No GPU required for this lab. Why?
+
+Both the dataset (MNIST) and the model (SimpleCNN) are small, and we only train for a few epochs over 3 clients and 5 rounds. 
+The total computation is light enough that a standard CPU can finish in reasonable time, so we don't need the parallel processing power of a GPU.
 '''
 
 '''
